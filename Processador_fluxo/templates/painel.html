@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Financeiro</title>
+</head>
+
+<body>
+
+    <div style="text-align: center; margin: 20px;">
+        <!-- Caixa de Data do Relatório -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Data Relatório</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>{{ Data }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Entradas Líquidas -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #28a745; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #28a745; color: white; padding: 10px; text-align: center; font-weight: bold;">Entradas Líquidas</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ entradas_liquidas }}</h5>
+            </div>
+        </div>
+        
+        <!-- Caixa de Saídas Líquidas -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #FF6347; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #FF6347; color: white; padding: 10px; text-align: center; font-weight: bold;">Saídas Líquidas</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saidas_liquidas }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Saldo Inicial -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #FFA500; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #FFA500; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Inicial</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saldo_inicial }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Entradas - Saídas -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #20B2AA; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #20B2AA; color: white; padding: 10px; text-align: center; font-weight: bold;">Entradas - Saídas</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ entradas_saidas }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Resgate - Aplicação -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #9370DB; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #9370DB; color: white; padding: 10px; text-align: center; font-weight: bold;">Resgate - Aplicação</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ resgate_aplicacao }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Saldo Final -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #4682B4; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #4682B4; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Final</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saldo_final }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Saldo Aplicado -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #32CD32; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #32CD32; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Aplicado</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saldo_aplicado }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Saldo Total -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #8B4513; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #8B4513; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Total</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saldo_total }}</h5>
+            </div>
+        </div>
+
+        <!-- Caixa de Saldo Bloqueado -->
+        <div style="width: 200px; min-height: 150px; border: 1px solid #2F4F4F; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #2F4F4F; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Bloqueado</div>
+            <div style="padding: 15px; text-align: center; word-wrap: break-word;">
+                <h5>R$ {{ saldo_bloqueado }}</h5>
+            </div>
+        </div>
+    </div>
+
+    <!-- Gráficos e Tabelas -->
+    <div style="text-align: center; margin: 20px;">
+        <!-- Gráfico -->
+        <div style="width: 1300px; min-height: 150px; border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Gráfico</div>
+            <div style="padding: 15px; text-align: center;">
+                <img src="data:image/png;base64,{{ entradas_saidas_7dias }}" alt="Gráfico de Entradas e Saídas">
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin: 20px;">
+        <!-- Tabela Saldo Investimentos - Atual -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Investimentos - Atual</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Banco</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saldo Atual</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for saldo in saldo_investimentos_atual %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ saldo.banco }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ saldo.saldo_atual }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ total_investimentos_atual }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela Saldo Investimentos - Bloqueado -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Investimentos - Bloqueado</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Banco</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saldo Bloqueado</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for saldo in saldo_investimentos_bloqueado %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ saldo.banco }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ saldo.saldo_bloqueado }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ total_investimentos_bloqueado }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela Saldo Disponível -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Saldo Disponível</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Banco</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saldo Disponível</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for banco, saldo in saldo_disponivel.items %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ banco }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ saldo }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ total_saldo_disponivel }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin: 20px;">
+        <!-- Tabela Fluxo de Caixa -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Fluxo de Caixa</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Banco</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saldo Inicial</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Entradas</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saídas</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Saldo Final</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for banco, dados in fluxo_de_caixa.items %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ banco }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ dados.saldo_inicial }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ dados.entradas }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ dados.saidas }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ dados.saldo_final }}</td>
+                        </tr>
+                        {% endfor %}
+                        {% comment %} <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ fluxo_de_caixa.Totais.saldo_inicial }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ fluxo_de_caixa.Totais.entradas }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ fluxo_de_caixa.Totais.saidas }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ fluxo_de_caixa.Totais.saldo_final }}</td>
+                        </tr> {% endcomment %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="text-align: center; margin: 20px;">
+        <!-- Tabela Entradas por Tipo -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Entradas por tipo</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Compromisso</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Valores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tipo_compromisso, valores in entradas_tipo.items %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ tipo_compromisso }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ valores }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ total_entradas_tipo }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Tabela Saídas por Tipo -->
+        <div style="border: 1px solid #000; border-radius: 10px; margin: 10px; overflow: hidden; display: inline-block; vertical-align: top;">
+            <div style="background-color: #000; color: white; padding: 10px; text-align: center; font-weight: bold;">Saídas por tipo</div>
+            <div style="padding: 15px; text-align: center;">
+                <table style="width: 100%; border-collapse: collapse;">
+                    <thead>
+                        <tr>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Compromisso</th>
+                            <th style="border: 1px solid #ddd; padding: 8px; text-align: center; background-color: #f2f2f2;">Valores</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for tipo_compromisso, valores in saidas_tipo.items %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">{{ tipo_compromisso }}</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ valores }}</td>
+                        </tr>
+                        {% endfor %}
+                        <tr>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">Total</td>
+                            <td style="border: 1px solid #ddd; padding: 8px; text-align: center;">R$ {{ total_saidas_tipo }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+
+</html>

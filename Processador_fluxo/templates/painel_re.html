@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório Financeiro</title>
+</head>
+
+<body>
+    <table style="width: 100%; border-collapse: collapse; text-align: center; white-space: nowrap;">
+
+        <tr style="display: flex; left: auto;">
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 150px; height: 100px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Data Relatório
+                    </div>
+                    <div style="padding: 5px;">
+                        <h5>{{ Data }}</h5>
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr style="display: flex;">
+            <!-- Entradas Líquidas -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #28a745; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #28a745; color: white; padding: 10px;">
+                        Entradas Líquidas
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ entradas_liquidas }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saídas Líquidas -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #FF6347; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #FF6347; color: white; padding: 10px;">
+                        Saídas Líquidas
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saidas_liquidas }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saldo Inicial -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #FFA500; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #FFA500; color: white; padding: 10px;">
+                        Saldo Inicial
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saldo_inicial }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Entradas - Saídas -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #20B2AA; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #20B2AA; color: white; padding: 10px;">
+                        Entradas - Saídas
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ entradas_saidas }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Resgate - Aplicação -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #9370DB; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #9370DB; color: white; padding: 10px;">
+                        Resgate - Aplicação
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ resgate_aplicacao }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saldo Final -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #4682B4; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #4682B4; color: white; padding: 10px;">
+                        Saldo Final
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saldo_final }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saldo Aplicado -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #32CD32; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #32CD32; color: white; padding: 10px;">
+                        Saldo Aplicado
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saldo_aplicado }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saldo Total -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #8B4513; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #8B4513; color: white; padding: 10px;">
+                        Saldo Total
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saldo_total }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <!-- Saldo Bloqueado -->
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #2F4F4F; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #2F4F4F; color: white; padding: 10px;">
+                        Saldo Bloqueado
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ saldo_bloqueado }}</h5>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+    <table>
+        <tr style="display: flex;">
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width:180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Gráfico
+                    </div>
+                    <div style="padding: 15px;">
+                        <h5>{{ entradas_saidas_7dias }}</h5>
+                    </div>
+                </div>
+            </td>
+
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Saldo Investimentos - Atual
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Banco</th>
+                                    <th>Saldo Atual</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for saldo in saldo_investimentos_atual %}
+                                <tr>
+                                    <td>{{ saldo.banco }}</td>
+                                    <td>{{ saldo.saldo_atual }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Saldo Investimentos - Bloqueado
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Banco</th>
+                                    <th>Saldo Bloqueado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for saldo in saldo_investimentos_bloqueado %}
+                                <tr>
+                                    <td>{{ saldo.banco }}</td>
+                                    <td>{{ saldo.saldo_bloqueado }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Saldo Disponível
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Banco</th>
+                                    <th>Saldo Disponível</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for banco, saldo in saldo_disponivel.items %}
+                                <tr>
+                                    <td>{{ banco }}</td>
+                                    <td>{{ saldo }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 200px; ">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Fluxo de Caixa
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Banco</th>
+                                    <th>Saldo Inicial</th>
+                                    <th>Entradas</th>
+                                    <th>Saídas</th>
+                                    <th>Saldo Final</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for banco, dados in fluxo_de_caixa.items %}
+                                <tr>
+                                    <td>{{ banco }}</td>
+                                    <td>{{ dados.saldo_inicial }}</td>
+                                    <td>{{ dados.entradas }}</td>
+                                    <td>{{ dados.saidas }}</td>
+                                    <td>{{ dados.saldo_final }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Entradas por tipo
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Compromisso</th>
+                                    <th>Valores</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tipo_compromisso, valores in entradas_tipo.items %}
+                                <tr>
+                                    <td>{{ tipo_compromisso }}</td>
+                                    <td>{{ valores }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+            <td style="padding: 15px; display: inline-block;">
+                <div
+                    style="width: 100%; border: 1px solid #000000; border-radius: 10px; overflow: hidden; width: 180px;">
+                    <div style="background-color: #000000; color: white; padding: 10px;">
+                        Saídas por tipo
+                    </div>
+                    <div style="padding: 15px;">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Compromisso</th>
+                                    <th>Valores</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for tipo_compromisso, valores in saidas_tipo.items %}
+                                <tr>
+                                    <td>{{ tipo_compromisso }}</td>
+                                    <td>{{ valores }}</td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
